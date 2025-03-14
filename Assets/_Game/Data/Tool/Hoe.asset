@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab3e4c80d18f064bbcd4673a6cc716b, type: 3}
   m_Name: Hoe
   m_EditorClassIdentifier: 
-  descrtiption: For tilling the land
+  descrtiption: A farming tool for tilling soil before planting crops.
   thumbnails: {fileID: -32936984, guid: 83bba5dcee0a4c84da15b22810417ca3, type: 3}
   gameModel: {fileID: 0}
   toolType: 0

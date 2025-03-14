@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab3e4c80d18f064bbcd4673a6cc716b, type: 3}
   m_Name: WateringCan
   m_EditorClassIdentifier: 
-  descrtiption: 
+  descrtiption: A container used to water plants and help them grow.
   thumbnails: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   gameModel: {fileID: 0}
   toolType: 1

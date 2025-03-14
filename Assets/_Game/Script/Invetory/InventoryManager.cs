@@ -24,6 +24,7 @@ public class InventoryManager : MonoBehaviour
     public ItemData[] items = new ItemData[8];
     // Item in the playe's hand
     public ItemData equippedItem = null;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
