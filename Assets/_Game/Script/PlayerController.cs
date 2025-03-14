@@ -11,12 +11,20 @@ public class PlayerController : MonoBehaviour
     [Header("Movement System")]
     public float walkSpeed = 3f;
     public float runSpeed = 7f;
+
+
+    // Interaction components
+    PlayerInteractor interaction;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Get movement component
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+
+        // Get interaction component
+        interaction = GetComponentInChildren<PlayerInteractor>();
     }
 
     // Update is called once per frame
@@ -24,6 +32,22 @@ public class PlayerController : MonoBehaviour
     {
         // Runs the function that handle all movement
         Move();
+
+        // Runs the funstion that handles all interation
+        Interaction();
+    }
+
+    public void Interaction()
+    {
+        // Tool interaction
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            // Interact 
+            Debug.Log("da nhan nut q");
+            interaction.Interact();
+        }
+
+        // TODO: Set up  item interaction
     }
 
     private void Move()
