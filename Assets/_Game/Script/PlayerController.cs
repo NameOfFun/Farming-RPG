@@ -35,6 +35,13 @@ public class PlayerController : MonoBehaviour
 
         // Runs the funstion that handles all interation
         Interaction();
+
+        // Debbuging purposes only
+        // Skip the time when the right square bracket is preseed
+        if(Input.GetKey(KeyCode.RightBracket))
+        {
+            TimeManager.Instance.Tick();
+        }
     }
 
     public void Interaction()

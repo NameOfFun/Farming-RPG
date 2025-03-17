@@ -38,6 +38,14 @@ public class GameTimestamp
         this.minute = minute;
     }
 
+    // Creating a new instance of a GameTimestamp from another pre-existing one
+    public GameTimestamp(GameTimestamp timestamp)
+    {
+        this.year = timestamp.year;
+        this.day = timestamp.day;
+        this.hour = timestamp.hour;
+        this.minute = timestamp.minute;
+    }
     public void UpdateClock()
     {
         minute++;
@@ -53,7 +61,7 @@ public class GameTimestamp
             day++;
         }
 
-        if (day > 30)
+        if (day > 90)
         {
             day = 1;
             if (season == Season.Winter)
@@ -95,5 +103,14 @@ public class GameTimestamp
     public static int YearsToDays(int year)
     {
         return year * 30 * 4;
+    }
+
+    public static int CompareTimestamps(GameTimestamp timestamp1, GameTimestamp timestamp2)
+    {
+        // Convert timestamps to the hours
+        int timestamp1Hours = DaysToHours(YearsToDays(timestamp1.year)) + DaysToHours(SeasonsToDays(timestamp1.season)) + DaysToHours(timestamp1.day) + timestamp1.hour;
+        int timestamp2Hours = DaysToHours(YearsToDays(timestamp2.year)) + DaysToHours(SeasonsToDays(timestamp2.season)) + DaysToHours(timestamp2.day) + timestamp2.hour;
+        int different = timestamp1Hours - timestamp2Hours;
+        return Mathf.Abs(different);
     }
 }
